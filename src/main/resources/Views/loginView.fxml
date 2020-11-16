@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+
+<?import javafx.geometry.Insets?>
+<BorderPane fx:id="loginWindow" fx:controller="Client.Controller.ControllerLoginScreen" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <VBox>
+            <padding>
+                <Insets top="150"  left="50"  bottom="10" right="100"/>
+            </padding>
+            <children>
+                <GridPane alignment="center" hgap="10" vgap="10">
+                <Label text="User" id="labelUser" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="textUser" id="fieldUser" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label text="Password" id="labelPassword" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <PasswordField fx:id="textPassword" id="fieldPassword" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                </GridPane>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <VBox>
+            <padding>
+                <Insets top="10"  left="50"  bottom="50" right="100"/>
+            </padding>
+            <children>
+                <GridPane alignment="center" hgap="10" vgap="10">
+                    <Label fx:id="lblEroareLogare" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Button onAction="#login" fx:id="buttonLogin" text="Login" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                </GridPane>
+            </children>
+        </VBox>
+    </bottom>
+
+</BorderPane>

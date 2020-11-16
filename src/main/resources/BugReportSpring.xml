@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <util:properties id="jdbcProps" location="classpath:bd.properties"/>
+
+    <bean id="valProg" class="Validator.ValidatorProgrammer"/>
+
+    <bean id="valTest" class="Validator.ValidatorTester"/>
+
+    <bean id="valBug" class="Validator.ValidatorBug"/>
+
+    <bean id="repoProgrammers" class="Repository.RepositoryHibernateProgrammers">
+    </bean>
+
+    <bean id="repoTesters" class="Repository.RepositoryHibernateTesters">
+    </bean>
+
+    <bean id="repoManager" class="Repository.RepositoryHibernateManager">
+    </bean>
+
+    <bean id="repoBugs" class="Repository.RepositoryHibernateBugs">
+    </bean>
+
+    <bean id="service" class="Server.Service">
+        <constructor-arg ref="repoProgrammers"/>
+        <constructor-arg ref="repoTesters"/>
+        <constructor-arg ref="repoBugs"/>
+        <constructor-arg ref="repoManager"/>
+        <property name="validatorProgrammer" ref="valProg"/>
+        <property name="validatorTester" ref="valTest"/>
+        <property name="validatorBug" ref="valBug"/>
+    </bean>
+
+</beans>

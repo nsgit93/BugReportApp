@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<BorderPane fx:id="testerWindow" fx:controller="Client.Controller.ControllerTesterScreen" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox>
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <GridPane alignment="center" hgap="10" vgap="10">
+                <Button onAction="#logout" text="Logout" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label text="Reported bugs" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            </GridPane>
+        </HBox>
+    </top>
+    <center>
+        <GridPane alignment="center" hgap="10" vgap="10">
+        <TableView fx:id="tableReportedBugs" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <columns>
+                <TableColumn text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Description">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="description"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Status">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="status"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+            <GridPane alignment="center" hgap="10" vgap="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Label text="Name " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="textName" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label text="Description " GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextArea fx:id="textDescription" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Button onAction="#addBug" fx:id="addBugButton" text="Report New Bug" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            </GridPane>
+        </GridPane>
+    </center>
+    <left>
+        <HBox>
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        </HBox>
+    </left>
+    <right>
+        <HBox>
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        </HBox>
+    </right>
+    <bottom>
+        <HBox>
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+        </HBox>
+    </bottom>
+</BorderPane>

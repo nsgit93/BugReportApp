@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<BorderPane fx:id="managerWindow" fx:controller="Client.Controller.ControllerManagerScreen" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox>
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        </HBox>
+    </top>
+    <center>
+        <GridPane alignment="center" hgap="10" vgap="10">
+            <Button onAction="#logout" text="Logout" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label text="Programmers" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Label text="Testers" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <TableView fx:id="tableProgrammers" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <columns>
+                    <!--<TableColumn text="ID">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="id"/>
+                        </cellValueFactory>
+                    </TableColumn>-->
+                    <TableColumn text="Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="User Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="username"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Password">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="password"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Salary">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="salary"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <!--<TableColumn text="Solved bugs">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="solvedBugsNumber"/>
+                        </cellValueFactory>
+                    </TableColumn>-->
+                </columns>
+            </TableView>
+            <TableView fx:id="tableTesters" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <columns>
+                    <!--<TableColumn text="ID">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="id"/>
+                        </cellValueFactory>
+                    </TableColumn>-->
+                    <TableColumn text="Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="User Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="username"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Password">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="password"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Salary">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="salary"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <!--<TableColumn text="Detected bugs">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="detectedBugsNumber"/>
+                        </cellValueFactory>
+                    </TableColumn>-->
+                </columns>
+            </TableView>
+        </GridPane>
+    </center>
+    <!--<left>
+        <HBox>
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        </HBox>
+    </left>
+    <right>
+        <HBox>
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        </HBox>
+    </right>-->
+    <bottom>
+        <HBox>
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+            <children>
+                <GridPane alignment="center" hgap="10" vgap="10">
+                    <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Label text="Username" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Label text="Password" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                    <Label text="Salary" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                    <Label text="Position" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                    <TextField fx:id="textName" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="textUsername" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <TextField fx:id="textPassword" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                    <TextField fx:id="textSalary" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                    <ComboBox fx:id="positionBox" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Programmer"/>
+                                <String fx:value="Tester"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <Button onAction="#addProgrammer" fx:id="buttonAddProgrammer" text="Add programmer" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <Button onAction="#addTester" fx:id="buttonAddTester" text="Add tester" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                </GridPane>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

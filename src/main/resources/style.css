@@ -1,0 +1,93 @@
+
+#loginWindow{
+    -fx-background-image: url("login_window_background_image.jpg");
+    -fx-background-image-position: center;
+    -fx-background-repeat: stretch;
+    -fx-background-size: 400 350;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#managerWindow{
+    -fx-background-image: url("manager_window_background_image.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 760 600;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#programmerWindow{
+    -fx-background-image: url("main_window_background_image.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 570 550;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#testerWindow{
+    -fx-background-image: url("main_window_background_image.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 850 530;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#tableProgrammers{
+    -fx-min-width: 130px;
+}
+
+#tableTesters{
+    -fx-min-width: 130px;
+}
+
+.label{
+    -fx-background-color: aquamarine;
+    -fx-font-size: 20;
+    -fx-font-family: sans-serif;
+    -fx-spacing: 10;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 1px;
+}
+
+.button{
+    -fx-background-color: red;
+}
+
+.button:hover{
+    -fx-background-color: purple;
+    -fx-text-fill: yellow;
+}
+
+#buttonLogin{
+    -fx-font-size: 16;
+    -fx-padding: 3 120 3 120;
+}
+
+#removeBugButton{
+    -fx-font-size: 16;
+    -fx-padding: 3 120 3 120;
+}
+
+#addBugButton{
+    -fx-font-size: 16;
+    -fx-padding: 3 180 3 180;
+}
+
+.button{
+    -fx-font-family: sans-serif;
+}
+
+.button{
+    -fx-opacity: 1.0;
+}
+
+.button:disabled{
+    -fx-opacity: 0.5;
+}
+
+.combo-box{
+    -fx-opacity: 1.0;
+}
+
+.combo-box:disabled{
+    -fx-opacity: 0.5;
+}
+
+
